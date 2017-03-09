@@ -9,7 +9,7 @@ end
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "ferventcoder/win2008r2-x64-nocm"
+  config.vm.box = "mwrock/Windows2012R2"
   config.vm.guest = :windows
   config.vm.communicator = "winrm"
 
