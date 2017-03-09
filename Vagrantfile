@@ -7,12 +7,6 @@ if ! File.exists?('./resources/NDP452-KB2901907-x86-x64-AllOS-ENU.exe')
   exit 1
 end
 
-if ! File.exists?('./resources/Octopus.Tentacle.2.6.0.778-x64.msi')
-  puts 'Octopus Tentacle installer could not be found!'
-  puts "Please run:\n  wget http://download.octopusdeploy.com/octopus/Octopus.Tentacle.2.6.0.778-x64.msi"
-  exit 1
-end
-
 Vagrant.configure(2) do |config|
 
   config.vm.box = "ferventcoder/win2008r2-x64-nocm"
@@ -23,8 +17,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "scripts/delete-default-iis-website.ps1"
   config.vm.provision :shell, path: "scripts/install-dot-net.ps1"
   config.vm.provision :shell, path: "scripts/install-dot-net-45.cmd"
-  config.vm.provision :shell, path: "scripts/install-octopus-tentacle.cmd"
-  config.vm.provision :shell, path: "scripts/configure-octopus-tentacle.cmd"
 
   config.vm.boot_timeout = 600
 
