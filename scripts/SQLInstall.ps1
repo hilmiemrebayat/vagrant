@@ -4,7 +4,7 @@ Configuration SQLInstall
         [Parameter(Mandatory=$true)]
         [ValidateNotNullOrEmpty()]
         [String]
-        $PackagePath
+        $PackagePath = ../resources/
     )
 
     Node $AllNodes.where{ $_.Role.Contains("SqlServer") }.NodeName
