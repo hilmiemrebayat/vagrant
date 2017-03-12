@@ -24,7 +24,7 @@
     end
     config.vm.provision :shell, path: "scripts/installatieIIS.ps1"
         config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
-    config.vm.provision :shell, path: "InstalleerMySQL.ps1"
+    config.vm.provision :shell, path: "scripts/InstalleerMySQL.ps1"
 
         config.vm.provision :shell, path: "scripts/configureerMySQL.ps1"
 
