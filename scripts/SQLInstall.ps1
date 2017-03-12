@@ -4,7 +4,7 @@ Configuration SQLInstall
         [Parameter(Mandatory=$true)]
         [ValidateNotNullOrEmpty()]
         [String]
-        $PackagePath = "../resources/"
+        $PackagePath
     )
 
     Node $AllNodes.where{ $_.Role.Contains("SqlServer") }.NodeName
@@ -32,7 +32,7 @@ Configuration SQLInstall
         # copy the sqlserver iso
         File SQLServerIso
         {
-            SourcePath = "$PackagePath\en_sql_server_2014_enterprise_edition_with_service_pack_1_x64_dvd_6669618.iso"
+            SourcePath = "en_sql_server_2014_enterprise_edition_with_service_pack_1_x64_dvd_6669618.iso"
             DestinationPath = "c:\temp\SQLServer.iso"
             Type = "File"
             Ensure = "Present"
@@ -75,7 +75,7 @@ Configuration SQLInstall
                 Write-Verbose "Drive letter for iso is: $setupDriveLetter"
                 
                 # run the installer using the ini file
-                $cmd = "$setupDriveLetter\Setup.exe /ConfigurationFile=c:\temp\ConfigurationFile.ini /SQLSVCPASSWORD=P2ssw0rd /AGTSVCPASSWORD=P2ssw0rd /SAPWD=P2ssw0rd"
+                $cmd = "$setupDriveLetter\Setup.exe /ConfigurationFile=c:\temp\ConfigurationFile.ini /SQLSVCPASSWORD=P@ssword /AGTSVCPASSWORD=P@ssword /SAPWD=P@ssword"
                 Write-Verbose "Running SQL Install - check %programfiles%\Microsoft SQL Server\120\Setup Bootstrap\Log\ for logs..."
                 Invoke-Expression $cmd | Write-Verbose
             }
