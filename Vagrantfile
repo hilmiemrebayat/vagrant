@@ -24,8 +24,8 @@
     end
     config.vm.provision :shell, path: "scripts/installatieIIS.ps1"
     config.vm.provision :shell, path: "scripts/veranderKeyboard.ps1"
+    config.vm.provision :shell, path: "scripts/SQLInstall.ps1"
 
-    
 end
 
  
