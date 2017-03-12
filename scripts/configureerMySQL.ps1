@@ -1,3 +1,4 @@
+y
 #MySql configuratie
 mysql_secure_installation
 #Geef de gewenste wachtwoord in (momenteel ingesteld als P@ssword)
