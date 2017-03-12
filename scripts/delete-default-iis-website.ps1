@@ -1,8 +1,6 @@
-$ErrorActionPreference = "Stop"
-echo "Deleting the default IIS website..."
+echo "IIS wordt geïnstalleerd"
 
-import-module webadministration
-Stop-WebSite 'Default Web Site'
-Remove-Website 'Default Web Site'
+import-module servermanager
+add-windowsfeature web-server -includeallsubfeature
 
-echo "Default website deleted."
+echo "IIS installatie is uitgevoerd"
