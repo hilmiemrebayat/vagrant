@@ -32,7 +32,7 @@ Configuration SQLInstall
         # copy the sqlserver iso
         File SQLServerIso
         {
-            SourcePath = "$PackagePath\en_sql_server_2012_developer_edition_x86_x64_dvd_813280.iso"
+            SourcePath = "$PackagePath\en_sql_server_2014_enterprise_edition_with_service_pack_1_x64_dvd_6669618.iso"
             DestinationPath = "c:\temp\SQLServer.iso"
             Type = "File"
             Ensure = "Present"
