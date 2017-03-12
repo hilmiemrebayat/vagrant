@@ -26,7 +26,7 @@
         config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
     config.vm.provision :shell, path: "scripts/InstalleerMySQL.ps1"
 
-        config.vm.provision :shell, path: "scripts/configureerMySQL.ps1"
+        config.vm.provision :shell, path: "scripts/configureerMySQL.cmd"
 
     config.vm.provision :shell, path: "scripts/veranderKeyboard.ps1"
 
