@@ -1,50 +1,28 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-if ! File.exists?('./resources/NDP452-KB2901907-x86-x64-AllOS-ENU.exe')
-  puts '.Net 4.5.2 installer could not be found!'
-  puts "Please run:\n  wget http://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
-  exit 1
+  Vagrant.configure("2") do |config|
+    config.vm.define "vagrant-windows-2012-r2"
+    config.vm.box = "kensykora/windows_2012_r2_standard"
+    config.vm.communicator = "winrm"
+
+    # Admin user name and password
+    config.winrm.username = "vagrant"
+    config.winrm.password = "vagrant"
+
+    config.vm.guest = :windows
+    config.windows.halt_timeout = 15
+
+    config.vm.network :forwarded_port, guest: 3389, host: 3389, id: "rdp", auto_correct: true
+    config.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
+
+    config.vm.provider :virtualbox do |v, override|
+        #v.gui = true
+        v.customize ["modifyvm", :id, "--memory", 2048]
+        v.customize ["modifyvm", :id, "--cpus", 2]
+        v.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
+    end
+    config.vm.provision :shell, path: "scripts/installatieIIS.ps1"
 end
 
-Vagrant.configure(2) do |config|
-
-  config.vm.box = "mwrock/Windows2012R2"
-  config.vm.guest = :windows
-  config.vm.communicator = "winrm"
-
-  config.vm.provision :shell, path: "scripts/install-iis.cmd"
-  config.vm.provision :shell, path: "scripts/delete-default-iis-website.ps1"
-  config.vm.provision :shell, path: "scripts/install-dot-net.ps1"
-  config.vm.provision :shell, path: "scripts/install-dot-net-45.cmd"
-
-  config.vm.boot_timeout = 600
-
-  config.vm.define "dev" do |dev|
-    dev.vm.network "private_network", ip: "192.168.100.10"
-    dev.vm.hostname = "vagranttests.dev"
-    dev.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
-  end
-
-  config.vm.define "fat" do |fat|
-    fat.vm.network "private_network", ip: "192.168.100.11"
-    fat.vm.hostname = "vagranttests.fat"
-    fat.vm.network :forwarded_port, guest: 5985, host: 5986, id: "winrm", auto_correct: true
-  end
-
-  config.vm.define "sat" do |sat|
-    sat.vm.network "private_network", ip: "192.168.100.12"
-    sat.vm.hostname = "vagranttests.sat"
-    sat.vm.network :forwarded_port, guest: 5985, host: 5987, id: "winrm", auto_correct: true
-  end
-
-  config.vm.provider "virtualbox" do |vb|
-    # Display the VirtualBox GUI when booting the machine
-    # vb.gui = true
-    
-    # Customize the amount of memory on the VM:
-    vb.cpus = 2
-    vb.memory = 2048
-  end
-
-end
+ 
