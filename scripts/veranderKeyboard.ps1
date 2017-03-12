@@ -1,1 +1,2 @@
-Set-WinUserLanguageList -LanguageList NL-BE
+Set-WinUserLanguageList -LanguageList NL-BE;
+exit
