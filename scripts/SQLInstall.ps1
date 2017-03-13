@@ -1,3 +1,3 @@
 $configfile = "ConfigurationFile.ini"
-$command = "resources\setup.exe /ConfigurationFile=$($configfile)"
+$command = "C:\HashiCorp\Vagrant\vagrant\scripts\resources\setup.exe /ConfigurationFile=$($configfile)"
 Invoke-Expression -Command $command 
