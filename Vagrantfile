@@ -23,12 +23,12 @@
         v.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
     end
     config.vm.provision :shell, path: "scripts/installatieIIS.ps1"
-        config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
+    config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
     config.vm.provision :shell, path: "scripts/InstalleerMySQL.ps1"
+    config.vm.provision :shell, path: "scripts/toetsenbord-instellen.ps1"
 
-        config.vm.provision :shell, path: "scripts/configureerMySQL.ps1"
+        config.vm.provision :shell, path: "scripts/configureerMySQL.bat"
 
-    config.vm.provision :shell, path: "scripts/veranderKeyboard.ps1"
 
 end
 
