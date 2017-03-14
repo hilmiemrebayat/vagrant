@@ -1,6 +1,6 @@
 mysql_secure_installation
 y
-3
+0
 P@ssword
 P@ssword
 y
