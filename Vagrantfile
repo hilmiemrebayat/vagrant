@@ -22,11 +22,22 @@
         v.customize ["modifyvm", :id, "--cpus", 2]
         v.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
     end
+    #Install IIS on Windows Server
     config.vm.provision :shell, path: "scripts/installatieIIS.ps1"
+    
+    #Install Chocolatey on Windows Server. You can install MySQL very easy With Chocolatey.
     #config.vm.provision :shell, path: "scripts/Chocolatey.ps1"
+    
+    #Download and install MySQL with Chocolatey on Windows Server
     #config.vm.provision :shell, path: "scripts/InstalleerMySQL.ps1"
+    
+    # Change keyboard settings on Windows Server
     config.vm.provision :shell, path: "scripts/toetsenbord-instellen.ps1"
+    
+    #Download and install SQL Server on Windows Server (Doesn't work at the moment)
     config.vm.provision :shell, path: "scripts/installeerSQL.ps1"
+    
+    #Configure MySQL (mysql_secure_installation) (Doesn't work at the moment)
     #config.vm.provision :shell, path: "scripts/configureerMySQL.bat"
 
 
