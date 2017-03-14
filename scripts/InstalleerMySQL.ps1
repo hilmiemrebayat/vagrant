@@ -1,1 +1,2 @@
-﻿choco install -y mysql
+#Install MySQL with Chocolatey
+choco install -y mysql
