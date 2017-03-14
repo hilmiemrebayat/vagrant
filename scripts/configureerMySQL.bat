@@ -8,4 +8,5 @@ y
 y
 y
 y
+timout 0
 exit
