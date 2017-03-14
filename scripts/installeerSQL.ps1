@@ -35,11 +35,11 @@ function WaitForFile($File) {
 
 #Setup Folders
 
-$setupFolder = "c:\colaberry"
+$setupFolder = "c:\SQL-Server"
 Create-Folder "$setupFolder"
 
-Create-Folder "$setupFolder\training"
-$setupFolder = "$setupFolder\training"
+Create-Folder "$setupFolder\sql"
+$setupFolder = "$setupFolder\sql"
 
 Create-Folder "$setupFolder\sqlbi"
 Create-Folder "$setupFolder\sqlbi\datasets"
