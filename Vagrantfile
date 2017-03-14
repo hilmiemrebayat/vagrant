@@ -34,9 +34,12 @@
     # Change keyboard settings on Windows Server
     config.vm.provision :shell, path: "scripts/toetsenbord-instellen.ps1"
     
-    #Download and install SQL Server on Windows Server (Doesn't work at the moment)
+    #METHOD 1: Download and install SQL Server on Windows Server (Doesn't work at the moment)
     config.vm.provision :shell, path: "scripts/installeerSQL.ps1"
     
+    #METHODE 2: Download and install SQL Server on Windows Server (Doesn't work at the moment)
+    #config.vm.provision :shell, path: "scripts/SQLInstall.ps1"
+
     #Configure MySQL (mysql_secure_installation) (Doesn't work at the moment)
     #config.vm.provision :shell, path: "scripts/configureerMySQL.bat"
 
