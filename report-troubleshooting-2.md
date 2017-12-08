@@ -177,6 +177,8 @@ MacBook-Pro-van-Hilmi:~ hilmiemrebayat$
 2. Test slaagt niet
 ![Test](https://github.com/hilmiemrebayat/vagrant/blob/master/Test.jpeg)
 3. De service draait:
+![Service actief](https://github.com/hilmiemrebayat/vagrant/blob/master/actief.jpeg)
+
 
 ## Resources
 
