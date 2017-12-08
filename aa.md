@@ -29,7 +29,7 @@
 2. Nadat de netwerkkaart actief werd heb ik opnieuw `ip a` gedaan en de ip-adressen gecontroleerd. De ip adressen klopten.
 - enp0s8 is "192.168.56.42". Dus de ip-adres klopt en er is geen fout.
 - enp0s3 is "10.0.2.15". Dus de ip-adres klopt en er is geen fout.
-3. Daarna controleren we de default gatway. We verwachten voor enp0s3 "10.0.2.2". De default gateway kan je bekijken met de volgende commando: `ip r``. Na het uitvoeren van de commando zien we als uitvoer "default via 10.0.2.2 dev...". Dus de default gateway klopt ook.
+3. Daarna controleren we de default gatway. We verwachten voor enp0s3 "10.0.2.2". De default gateway kan je bekijken met de volgende commando: `ip r`. Na het uitvoeren van de commando zien we als uitvoer "default via 10.0.2.2 dev...". Dus de default gateway klopt ook.
 4. Nu gaan we de DNS instellingen controleren. We verwachten "10.0.2.3". Om te checken voeren we de volgende commando uit: `vi /etc/resolv.conf `. We krijgen als uitvoer "nameserver: 10.0.2.3". Dus de dns-server klopt.
 5. Als laatst gaan we pingen naar de ip-adres 192.168.56.42 vanuit de terminal van mijn computer.
  - 192.168.56.42 ==> Pingen lukt
