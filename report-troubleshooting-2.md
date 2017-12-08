@@ -175,7 +175,7 @@ round-trip min/avg/max/stddev = 0.442/0.619/0.709/0.125 ms
 MacBook-Pro-van-Hilmi:~ hilmiemrebayat$ 
 ```
 2. Test slaagt niet
-[Test]!(https://github.com/hilmiemrebayat/vagrant/blob/master/Test.jpeg)
+[Test](https://github.com/hilmiemrebayat/vagrant/blob/master/Test.jpeg)
 3. De service draait:
 
 ## Resources
