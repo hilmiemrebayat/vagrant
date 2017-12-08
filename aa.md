@@ -44,8 +44,8 @@
   - ip adres van beedle van 192.168.56.12 naar 192.168.56.13
   - CNAME toegevoegd mankey. De volgende voeg je toe onder de regel mankey: `files IN CNAME mankey`
   - Open 2.0.192.in-addr.arpa en controlleer de file met de commando `sudo vi /var/named/2.0.192.in-addr.arpa`. Na het openen ziet men dat er na ....cynalco.com geen punt (.) staat. Hierdoor kan de service ook niet gestart worden. We zetten een punt na elk cynalco.com. en we voegen ook tamatama.cyncynalco.com toe onder de primaire dns. De file moet er zo uitzien:
-  ```
-  ; Reverse zone file for cynalco.com
+  ```
+  ; Reverse zone file for cynalco.com
   ; Ansible managed: /home/bert/CfgMgmt/troubleshooting/dns/ansible/roles/bertvv.bind/templates/reverse_zone.j2 modified on 2015-06-14 21:02:59 by bert on jace.asgard.lan
   ; vi: ft=bindzone
   
@@ -67,7 +67,7 @@
   ~
   ~
   "/var/named/2.0.192.in-addr.arpa" 19L, 579C
-```
+ ```
 - Open 192.168.56.in-addr.arpa en controlleer de file met de commando `sudo vi /var/named/2.0.192.in-addr.arpa`. Na het openen ziet men dat er na ....cynalco.com geen punt (.) staat. Hierdoor kan de service ook niet gestart worden. We zetten een punt na elk cynalco.com en we passen ook de getallen voor de hostnaam butterfree en fushigisou aan. We voegen ook tamatama.cyncynalco.com toe onder de primaire dns. De file moet er zo uit zien:
 ```
 ; Reverse zone file for cynalco.com
@@ -98,7 +98,7 @@ IN  NS     tamatama.cynalco.com.
  - We gaan de syntax van configuratiebestanden testen.  We gebruiken hiervoor de commando: `$ sudo named-checkconf /etc/named.conf`. We krijgen geen uitvoer dus er is geen fout.
  - Daarna gaan we de syntax testen van zonebestanden met de commando: `$ sudo named-checkzone cynalco.com /var/named/cynalco.com`. We krijgen als uitvoer: `zone cynalco.com/IN: loaded serial 15081921. OK`. Dus de syntax is hier ook goed.
  - Hierna gaan we kijken of er fouten zijn door de log te bekijken. Dit doen we door deze twee commando's uit te voeren: `sudo rndc querylog on` en `sudo journalctl -l -f -u named.service`. Als uitvoer krijgen we de volgende zien, dus er ziet ernaar uit dat er geen fout is:
- ```
+```
  [vagrant@golbat ~]$ sudo journalctl -l -f -u named.service
  -- Logs begin at vr 2017-12-08 08:36:59 UTC. --
  dec 08 10:11:32 golbat.cynalco.com named[3232]: zone cynalco.com/IN: loaded serial 15081921
@@ -111,7 +111,6 @@ IN  NS     tamatama.cynalco.com.
  dec 08 10:11:32 golbat.cynalco.com named[3232]: zone 2.0.192.in-addr.arpa/IN: sending notifies (serial 15081921)
  dec 08 10:23:10 golbat.cynalco.com named[3232]: received control channel command 'querylog on'
  dec 08 10:23:10 golbat.cynalco.com named[3232]: query logging is now on
- 
 ```
 
 
