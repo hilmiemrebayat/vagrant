@@ -160,6 +160,8 @@ Dus nslookup en dig lukt
 
 Qua applicatie laag kan er niet veel getoond en getest worden.
 
+Vergeten toe te voegen in de stappen. In de file named.conf onderaan heb ik 192.168.56.in-addr.arpa aangepast naar 
+56.168.192.in-addr.arpa. De naam van de file 192.168.56.in-addr.arpa in /var/named/ heb ik ook aangepast naar 56.168.192.in-addr.arpa
 ## End result
 1. Pingen naar de ip-adres 192.168.56.42 lukt: 
 ```
