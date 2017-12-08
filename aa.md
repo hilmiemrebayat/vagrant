@@ -67,7 +67,7 @@
   ~
   ~
   "/var/named/2.0.192.in-addr.arpa" 19L, 579C
- ```
+  ```
 - Open 192.168.56.in-addr.arpa en controlleer de file met de commando `sudo vi /var/named/2.0.192.in-addr.arpa`. Na het openen ziet men dat er na ....cynalco.com geen punt (.) staat. Hierdoor kan de service ook niet gestart worden. We zetten een punt na elk cynalco.com en we passen ook de getallen voor de hostnaam butterfree en fushigisou aan. We voegen ook tamatama.cyncynalco.com toe onder de primaire dns. De file moet er zo uit zien:
 ```
 ; Reverse zone file for cynalco.com
@@ -96,7 +96,7 @@ IN  NS     tamatama.cynalco.com.
 - Na de aanpassingen voeren we de volgende commando's uit om de service te stoppen en te starten: `sudo systemctl stop named` en '`sudo systemctl start named`. De systeem start nu zonder problemen op. We bekijken of er nog fouten zijn met de commando `sudo systemctl status named -l`. Na het uitvoeren zien we dat er geen fouten zijn en dat de service actief is zonder problemen.
 2. Nadat we de service hebben gecontroleerd gaan we enkele testen uitvoeren:
  - We gaan de syntax van configuratiebestanden testen.  We gebruiken hiervoor de commando: `$ sudo named-checkconf /etc/named.conf`. We krijgen geen uitvoer dus er is geen fout.
- - Daarna gaan we de syntax testen van zonebestanden met de commando: `$ sudo named-checkzone cynalco.com /var/named/cynalco.com`. We krijgen als uitvoer: `zone cynalco.com/IN: loaded serial 15081921. OK`. Dus de syntax is hier ook goed.
+ - Daarna gaan we de syntax testen van zonebestanden met de commando: `sudo named-checkzone cynalco.com /var/named/cynalco.com`. We krijgen als uitvoer: `zone cynalco.com/IN: loaded serial 15081921. OK`. Dus de syntax is hier ook goed.
  - Hierna gaan we kijken of er fouten zijn door de log te bekijken. Dit doen we door deze twee commando's uit te voeren: `sudo rndc querylog on` en `sudo journalctl -l -f -u named.service`. Als uitvoer krijgen we de volgende zien, dus er ziet ernaar uit dat er geen fout is:
 ```
  [vagrant@golbat ~]$ sudo journalctl -l -f -u named.service
