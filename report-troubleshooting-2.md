@@ -161,8 +161,22 @@ Dus nslookup en dig lukt
 Qua applicatie laag kan er niet veel getoond en getest worden.
 
 ## End result
-
-
+1. Pingen naar de ip-adres 192.168.56.42 lukt: 
+```
+MacBook-Pro-van-Hilmi:~ hilmiemrebayat$ ping 192.168.56.42
+PING 192.168.56.42 (192.168.56.42): 56 data bytes
+64 bytes from 192.168.56.42: icmp_seq=0 ttl=64 time=0.442 ms
+64 bytes from 192.168.56.42: icmp_seq=1 ttl=64 time=0.706 ms
+64 bytes from 192.168.56.42: icmp_seq=2 ttl=64 time=0.709 ms
+^C
+--- 192.168.56.42 ping statistics ---
+3 packets transmitted, 3 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.442/0.619/0.709/0.125 ms
+MacBook-Pro-van-Hilmi:~ hilmiemrebayat$ 
+```
+2. Test slaagt niet
+[Test]!()
+3. De service draait:
 
 ## Resources
 
