@@ -165,4 +165,9 @@ Dus nslookup en dig lukt
 
 ## Resources
 
-List all sources of useful information that you encountered while completing this assignment: books, manuals, HOWTO's, blog posts, etc.
+1. https://chamilo.hogent.be/Chamilo/Libraries/Resources/Javascript/Plugin/PDFJS/web/viewer.html?file=https%3A%2F%2Fchamilo.hogent.be%2Findex.php%3Fapplication%3DChamilo%255CCore%255CRepository%26go%3DDocumentDownloader%26object%3D2871660%26security_code%3Db3c37ca8668dbc33f7766314082885441bad55a6%26display%3D1%26saveName%3Dsyllabus-elnx.pdf
+2. https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/ch-dns_servers
+3. https://github.com/bertvv/ansible-role-bind/#running-vagrant-tests
+4. https://www.cyberciti.biz/tips/troubleshooting-bind-dns-2.html
+5. https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-bind-namedconf.html
+6. http://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-configure-static-ip-address-in-centos-7-rhel-7-fedora-26.html
