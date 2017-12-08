@@ -158,6 +158,7 @@ ns2.hogent.be.		3600	IN	AAAA	2001:6a8:1c60:ab00::2
 Dus nslookup en dig lukt
 ### Application Layer
 
+Qua applicatie laag kan er niet veel getoond en getest worden.
 
 ## End result
 
