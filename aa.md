@@ -112,8 +112,50 @@ IN  NS     tamatama.cynalco.com.
  dec 08 10:23:10 golbat.cynalco.com named[3232]: received control channel command 'querylog on'
  dec 08 10:23:10 golbat.cynalco.com named[3232]: query logging is now on
 ```
+- Nu gaan we nslookup en een dig uitvoeren naar hogent. Dit doen we met de commando `nslookup www.hogent.be` en `dig www.hogent.be`. We zien als uitvoer: 
+```
+[vagrant@golbat ~]$ nslookup www.hogent.be
+Server:		10.0.2.3
+Address:	10.0.2.3#53
 
+Name:	www.hogent.be
+Address: 178.62.144.90
+```
+en
+```
+[vagrant@golbat ~]$ dig www.hogent.be
 
+; <<>> DiG 9.9.4-RedHat-9.9.4-18.el7_1.3 <<>> www.hogent.be
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26818
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 5
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;www.hogent.be.			IN	A
+
+;; ANSWER SECTION:
+www.hogent.be.		3600	IN	A	178.62.144.90
+
+;; AUTHORITY SECTION:
+hogent.be.		3600	IN	NS	ns2.hogent.be.
+hogent.be.		3600	IN	NS	ns1.hogent.be.
+
+;; ADDITIONAL SECTION:
+ns1.hogent.be.		3600	IN	A	193.190.173.1
+ns1.hogent.be.		3600	IN	AAAA	2001:6a8:1c60:ab00::1
+ns2.hogent.be.		3600	IN	A	193.190.173.2
+ns2.hogent.be.		3600	IN	AAAA	2001:6a8:1c60:ab00::2
+
+;; Query time: 54 msec
+;; SERVER: 10.0.2.3#53(10.0.2.3)
+;; WHEN: vr dec 08 10:58:04 UTC 2017
+;; MSG SIZE  rcvd: 182
+
+```
+Dus nslookup en dig lukt
 ### Application Layer
 
 
