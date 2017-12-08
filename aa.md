@@ -44,7 +44,7 @@
   - ip adres van beedle van 192.168.56.12 naar 192.168.56.13
   - CNAME toegevoegd mankey. De volgende voeg je toe onder de regel mankey: `files IN CNAME mankey`
   - Open 2.0.192.in-addr.arpa en controlleer de file met de commando `sudo vi /var/named/2.0.192.in-addr.arpa`. Na het openen ziet men dat er na ....cynalco.com geen punt (.) staat. Hierdoor kan de service ook niet gestart worden. We zetten een punt na elk cynalco.com. en we voegen ook tamatama.cyncynalco.com toe onder de primaire dns. De file moet er zo uitzien:
-  ```
+```
   ; Reverse zone file for cynalco.com
   ; Ansible managed: /home/bert/CfgMgmt/troubleshooting/dns/ansible/roles/bertvv.bind/templates/reverse_zone.j2 modified on 2015-06-14 21:02:59 by bert on jace.asgard.lan
   ; vi: ft=bindzone
